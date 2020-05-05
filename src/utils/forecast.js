@@ -14,10 +14,10 @@ const forecast = (lat, long, callback) => {
             // let humid = response.body.current.humidity;
             // let overcast = response.body.current.weather_descriptions[0];
 
-            let { temperature: temp, humidity: humid, weather_descriptions: overcast } = body.current;
+            let { temperature: temp, humidity: humid, weather_descriptions: overcast, feelslike: feels } = body.current;
 
             // callback(undefined, `${overcast} It is currently ${temp} degrees celcius out and humidity is ${humid} % out.`);
-            callback(undefined, `${overcast[0]} It is currently ${temp} degrees celcius out and humidity is ${humid} % out.`);
+            callback(undefined, `${overcast[0]} It is currently ${temp} degrees celcius out and humidity is ${humid} % out. and it is feels like ${feels} outside.`);
 
         }
     })
